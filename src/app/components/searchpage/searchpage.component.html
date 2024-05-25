@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Github Searcher</title>
+    <style>
+        /* Add some basic styling to the navbar and search form */
+        .navbar {
+            background-color: #f0f0f0;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        .navbar-nav {
+            display: flex;
+            align-items: center;
+        }
+        .nav-link {
+            margin: 0 0.5rem;
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+            transition: all 0.3s ease-in-out;
+        }
+        .nav-link:hover {
+            background-color: #f8f9fa;
+        }
+        .nav-link.active {
+            background-color: #e9ecef;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50vh;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+        label {
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            color: #6c757d;
+        }
+        input[type="text"] {
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+            padding: 0.5rem;
+            width: 20rem;
+        }
+        button {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 0.25rem;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+        button:hover {
+            background-color: #0069d9;
+        }
+        button:disabled {
+            background-color: #c0c0c0;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <form [formGroup]="searchform" (ngSubmit)="sendUser()">
+            <label for="">Username </label>
+            <input type="text" name="" id="" formControlName="username">
+            <button type="button" class="btn btn-primary" (click)="sendUser()" [disabled]="!this.searchform.valid">getDetails</button>
+        </form>
+    </div>
+</body>
+</html>
